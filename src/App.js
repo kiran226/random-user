@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
 import Axios from 'axios';
+import CardPost from './CardPost';
 
 function App() {
   const [details,setDetails] = useState({});
@@ -24,22 +25,13 @@ function App() {
   },[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className='p-4 bg-primary App' >
+      <Row>
+        <Col md={4} className='offset md-4 mt-4' > 
+          <CardPost details={details} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
